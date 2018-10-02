@@ -114,7 +114,7 @@
 			</div>
 		</nav>
 		
-		<form id="caixa2">
+		<form id="caixa2" enctype="multipart/form-data">
 			<div class="form-row align-items-center">
 				<div class="col-auto my-1">
 					<select class="custom-select mr-sm-2 border border-dark" id="tipoPesquisa">
@@ -131,7 +131,7 @@
 			</div>
 		</form> 
 
-		<form method="post" id= "container1" action="CadastroProdutoServlet">
+		<form method="post" id= "container1" action="CadastroProdutoServlet" enctype="multipart/form-data">
 			
 			<h4>Cadastro de Livro</h4>
 			
@@ -216,6 +216,15 @@
 							<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="frete_comprador">
 							<label class="custom-control-label" id="texto">Frete por conta do comprador</label>
 						</div>
+					</div>
+                                        
+                                        <!-- Imagens -->
+                                        <div class="form-group">
+                                            <input type="file" class="form-control  border border-dark" id="imagem_1" name="imagem_1" accept="image/*" required>
+						<input type="file" class="form-control  border border-dark" id="imagem_2" name="imagem_2" accept="image/*">
+						<input type="file" class="form-control  border border-dark" id="imagem_3" name="imagem_3" accept="image/*">
+						<input type="file" class="form-control  border border-dark" id="imagem_4" name="imagem_4" accept="image/*">
+						<input type="file" class="form-control  border border-dark" id="imagem_5" name="imagem_5" accept="image/*">
 					</div>
 					
 				</div>

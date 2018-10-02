@@ -359,7 +359,7 @@
                 
 
                     out.println("<td class='caixa'>");
-                            out.println("<img src='https://images.livrariasaraiva.com.br/imagemnet/imagem.aspx/?pro_id=2870760&qld=90&l=430&a=-1' width='200' height = '200'  alt=''>");
+                            out.println("<img src='./imagens?id_prod=" + lista.get(i).getId() + "&img=1' width='200' height = '200'  alt=''>");
                             
                             //out.println("<p> ID: <span name='id' id='id'>" + lista.get(i).getId()+ "</span></p>");
                             out.println("<p> Titulo: <span name='titulo' id='texto'>" + lista.get(i).getTitulo()+ "</span></p>");
