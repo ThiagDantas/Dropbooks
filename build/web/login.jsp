@@ -150,7 +150,7 @@
                         </div>
                         <div class="form-group">
                             <label for="labelSenha">Senha</label>
-                            <input type="password" class="form-control" name="senha" aria-describedby="senha" placeholder="*******">
+                            <input type="password" class="form-control" name="senha" aria-describedby="senha" placeholder="Digite sua senha">
                             <small class="text-left novaSenha "><a href="Senha.jsp">Esqueceu sua senha?</a></small>
                         </div>
                         <button type="submit" value="login" class="btn btn-primary btn-block">Enviar</button>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Dropbooks</title>  
+
+  <link rel="stylesheet" href="res/css/bootstrap.css">
+  <link rel="stylesheet" href="res/css/cadastro.css">
+</head>
+<body>
+
+  <!--inicio do nav-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-light">
+    <a class="navbar-brand col-sm-3 col-md-2" href="#">DROPBOOKS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse col-lg-5">
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link " href="novaHome.html" >Inicio</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="novaHome.html" >Livros</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="#" >F.A.Q</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="Contato.jsp" >Contato</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav> <!--fim do nav-->
+
+
+
+  <h3>Cadastro de Usuário</h3>
+        <form method="post" id="form" name="form" action="CadastroServlet" onsubmit="teste()">
+<div class="col-lg-12">
+            <div id="block1">
+
+                <p >Email :</p>
+                <input type="email" name="email" id="email"  maxlength="45" class="cxs1" required/>
+
+                <p>Repita Email :</p> 
+                <input type="email" name="repemail" id="reemail"  maxlength="45" class="cxs1" required/>
+
+                <p >Senha :</p>
+                <input type="password" name="senha" id="senha" maxlength="20" class="cxs1" required/>
+
+                <p>Repita Senha :</p>
+                <input type="password" name="repsenha" id="repsenha" maxlength="20" class="cxs1" required/>
+
+                <p>Telefone:</p>
+
+                <div id="telcx">
+                    <input name="ddd" type="text" id="ddd"  maxlength="2" required/>
+                    <input type="text" name="telefone" maxlength="9" id="telefone" required />       
+                </div>
+
+                <div id="tipo">
+                    <p class="texto">Tipo :</p>
+                    <div id="radioCadastro">
+                        <p class="cte">Físico</p>
+                        <INPUT TYPE="RADIO" NAME="tipoPessoa" id="idFisico" VALUE="1" required/>
+                        <p class="cte"> Jurídico </p>
+                        <INPUT TYPE="RADIO" NAME="tipoPessoa" id="idJuridico" VALUE="2" required/>  
+                    </div>
+                </div>
+
+                <div id="fisico" class="fj">
+
+                    <p>CPF:</p>
+                    <input type="text" name="cpf" id="cpf"  maxlength="11" class="cxs1" placeholder="Insira os 11 digitos" />
+
+                    <p>Nome Completo:</p>
+                    <input type="text" name="nomeRazao" id="nome" class="cxs1">
+
+                    <p>Data de Nascimento:</p>
+                    <input type="date" name="data" id="data" class="cxs1">
+
+                </div>
+
+                <div id="juridico" class="fj">
+
+                    <p>CNPJ:</p>
+                    <input type="text" name="cnpj" id="cnpj" placeholder="Insira os 14 caracteres" maxlength="14" class="cxs1"/>
+
+                    <p>Razão Social:</p>
+                    <input type="text" name="nomeRazao" id="nomeRazao" class="cxs1">
+
+                </div>
+
+                <p >Cep :</p>
+                <input type="text" name="cep"  maxlength="30" required class="cxs1"/>
+
+                <p >Endereço:</p> 
+                <input type="text" name="logradouro"  maxlength="30" required class="cxs1"/>
+
+                <p>Número:</p>
+                <input name="numero" type="text" id="numero" required class="cxs1"/>
+
+                <p>Complemento: </p> 
+                <input type="text" name="complemento"  id="comp" required class="cxs1"/>
+
+                <p>Estado: </p>
+                <input type="text" name="estado" id="estado"  maxlength="70" required class="cxs1"/>
+
+                <p>Cidade:</p>
+                <input type="text" name="cidade" id="cidade" maxlength="20" required class="cxs1"/>
+
+                <p>Bairro: </p>
+                <input type="text" name="bairro" id="bairro"  maxlength="70" required class="cxs1"/>
+
+            </div>
+
+            <div id="end_submit">
+                <input type="checkbox" name="rec_novidades" id="rec_novidades" value="ATIVO" checked="checked" required/>
+                Você Concorda com os termos de uso Ler <a href="#">Termos de Uso</a>
+
+                <p>
+                    <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar" class="btn"/>
+
+                    <input type="reset" name="limpar" id="limpar" value="Limpar" class="btn"/>
+
+                </p>  
+
+            </div>
+        </form>
+
+</div>
+</body>
+</html>
