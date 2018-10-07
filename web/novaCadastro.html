@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
 
-  <title>Dropbooks</title>  
+<link rel="stylesheet" href="res/css/bootstrap.min.css">
+      <link rel="stylesheet" href="res/css/novaCadastro.css">
 
-  <link rel="stylesheet" href="res/css/bootstrap.css">
-  <link rel="stylesheet" href="res/css/cadastro.css">
 </head>
-<body>
 
+<body>
   <!--inicio do nav-->
   <nav class="navbar navbar-expand-md navbar-dark bg-light">
     <a class="navbar-brand col-sm-3 col-md-2" href="#">DROPBOOKS</a>
@@ -24,11 +23,11 @@
           <li class="nav-item">
             <a class="nav-link " href="novaHome.html" >Inicio</a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link " href="novaHome.html" >Livros</a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link " href="#" >F.A.Q</a>
           </li>
@@ -36,108 +35,110 @@
           <li class="nav-item">
             <a class="nav-link " href="Contato.jsp" >Contato</a>
           </li>
-          
+
         </ul>
       </div>
     </div>
   </nav> <!--fim do nav-->
 
 
+    <div class="col-md-6 col-md-offset-3">
+        <form id="msform">
 
-  <h3>Cadastro de Usuário</h3>
-        <form method="post" id="form" name="form" action="CadastroServlet" onsubmit="teste()">
-<div class="col-lg-12">
-            <div id="block1">
+            <fieldset id="infobasica">
+                <h2 class="fs-title">Informações Pessoais</h2>
+              
 
-                <p >Email :</p>
-                <input type="email" name="email" id="email"  maxlength="45" class="cxs1" required/>
 
-                <p>Repita Email :</p> 
-                <input type="email" name="repemail" id="reemail"  maxlength="45" class="cxs1" required/>
+              <div class="row col-lg-10 col-md-10">
 
-                <p >Senha :</p>
-                <input type="password" name="senha" id="senha" maxlength="20" class="cxs1" required/>
+             
+              <div class="form-group ">
+                    <label class="text-center">Qual seu tipo de conta?</label><br>
 
-                <p>Repita Senha :</p>
-                <input type="password" name="repsenha" id="repsenha" maxlength="20" class="cxs1" required/>
 
-                <p>Telefone:</p>
+                   <label class="radio-inline"><input type="radio" name="tipoPessoa" id="idFisico" value="1" required>Físico</label>
+                    <label class="radio-inline"><input type="radio" name="tipoPessoa" id="idJuridico" value="2" required>Juridico</label>
+                  </div>
 
-                <div id="telcx">
-                    <input name="ddd" type="text" id="ddd"  maxlength="2" required/>
-                    <input type="text" name="telefone" maxlength="9" id="telefone" required />       
+              <div class="col-xs-5">
+                <input type="text" name="email" id="email" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required placeholder="Digite seu email"/>
+                <input type="text" name="repemail" id="reemail" maxlength="40" required placeholder="Repita seu email"/>
+              </div>
+              
+              <div class="col-xs-6">
+                <input type="password" name="senha" id="senha" maxlength="20" required placeholder="Digite sua senha"/>
+                <input type="password" name="repenha" id="repenha" maxlength="20" required="required" placeholder="Repita sua senha"/>
+              </div>
+              
+              <div class="col-xs-6">
+                <input type="text" name="telefone" id="telefone" maxlength="20"  placeholder="Digite seu telefone"/>
+                <div class="valid-feedback">Tudo certo!</div>
+              </div>
+              
+
+              </div>
+
+                <input type="button" name="next" class="proximo action-button" value="Continuar" onclick="alterarfs()"/>
+            </fieldset>
+            
+            <fieldset id="infoendereco">
+                <h2 class="fs-title">Endereço</h2>
+                <h3 class="fs-subtitle">Precisamos saber para onde enviaremos seu pedido</h3>
+                
+                <div class="col-xs-6">
+                <input type="text" name="cep" id="cep" pattern="[0-9]+" required placeholder="CEP" required/>
+                <div class="invalid-feedback">Por favor, informe o CEP Valido.</div>
                 </div>
-
-                <div id="tipo">
-                    <p class="texto">Tipo :</p>
-                    <div id="radioCadastro">
-                        <p class="cte">Físico</p>
-                        <INPUT TYPE="RADIO" NAME="tipoPessoa" id="idFisico" VALUE="1" required/>
-                        <p class="cte"> Jurídico </p>
-                        <INPUT TYPE="RADIO" NAME="tipoPessoa" id="idJuridico" VALUE="2" required/>  
-                    </div>
+                           
+                <div class="col-xs-6">
+                <input type="text" name="estado" id="estado" maxlength="20" required placeholder="Estado"/>
                 </div>
-
-                <div id="fisico" class="fj">
-
-                    <p>CPF:</p>
-                    <input type="text" name="cpf" id="cpf"  maxlength="11" class="cxs1" placeholder="Insira os 11 digitos" />
-
-                    <p>Nome Completo:</p>
-                    <input type="text" name="nomeRazao" id="nome" class="cxs1">
-
-                    <p>Data de Nascimento:</p>
-                    <input type="date" name="data" id="data" class="cxs1">
-
+                
+                <div class="col-xs-6">
+                <input type="text" name="cidade" id="cidade" maxlength="20" required placeholder="Cidade"/>
+                </div>   
+                
+                <div class="col-xs-6">
+                <input type="text" name="logradouro" id="logradouro" maxlength="50" required placeholder="Endereço"/>
                 </div>
-
-                <div id="juridico" class="fj">
-
-                    <p>CNPJ:</p>
-                    <input type="text" name="cnpj" id="cnpj" placeholder="Insira os 14 caracteres" maxlength="14" class="cxs1"/>
-
-                    <p>Razão Social:</p>
-                    <input type="text" name="nomeRazao" id="nomeRazao" class="cxs1">
-
+                
+                <div class="col-xs-6">
+                <input type="text" name="numero" id="numero" maxlength="5" required placeholder="Endereço"/>
                 </div>
-
-                <p >Cep :</p>
-                <input type="text" name="cep"  maxlength="30" required class="cxs1"/>
-
-                <p >Endereço:</p> 
-                <input type="text" name="logradouro"  maxlength="30" required class="cxs1"/>
-
-                <p>Número:</p>
-                <input name="numero" type="text" id="numero" required class="cxs1"/>
-
-                <p>Complemento: </p> 
-                <input type="text" name="complemento"  id="comp" required class="cxs1"/>
-
-                <p>Estado: </p>
-                <input type="text" name="estado" id="estado"  maxlength="70" required class="cxs1"/>
-
-                <p>Cidade:</p>
-                <input type="text" name="cidade" id="cidade" maxlength="20" required class="cxs1"/>
-
-                <p>Bairro: </p>
-                <input type="text" name="bairro" id="bairro"  maxlength="70" required class="cxs1"/>
-
-            </div>
-
-            <div id="end_submit">
+                
+                <div class="col-xs-6">
+                <input type="text" name="complemento" id="complemento" maxlength="20" required placeholder="Complemento"/>
+                </div>
+                
+                <div class="col-xs-6">
+                <input type="text" name="bairro" id="bairro" maxlength="20" required placeholder="Bairro"/>
+                </div>
+             
+                           <div id="end_submit">
                 <input type="checkbox" name="rec_novidades" id="rec_novidades" value="ATIVO" checked="checked" required/>
                 Você Concorda com os termos de uso Ler <a href="#">Termos de Uso</a>
-
                 <p>
-                    <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar" class="btn"/>
-
-                    <input type="reset" name="limpar" id="limpar" value="Limpar" class="btn"/>
-
+                  
                 </p>  
+            </div>                             
+                <input type="button" name="previous" class="voltar btnVoltar" value="Voltar"/>
+                <input type="submit" name="cadastrar" id="cadastrar" class="next action-button" value="Criar conta"/>
+            </fieldset>
 
-            </div>
         </form>
+    </div>
 
-</div>
+
+    <script src="res/jquery-3.3.1.js"></script>
+    <!-- Adicionar o easing na pasta do projeto pra não ficar dependente do CDN -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+
+    <script src="res/js/bootstrap.min.js"></script>
+    <script  src="res/js/novaCadastro.js"></script> 
+    <script src="res/js/Cadastro.js"></script>
+    
 </body>
+
 </html>

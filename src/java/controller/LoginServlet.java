@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
             }
             else{
                 // response.sendRedirect("login.jsp");
-                 RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+                 RequestDispatcher rd = request.getRequestDispatcher("novaLogin.jsp");
                  rd.include(request, response);
              } 
       

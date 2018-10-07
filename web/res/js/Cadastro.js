@@ -1,7 +1,5 @@
-
-window.onload = function () {
-    
-      aparecerCaixa();
+window.onload=function(){
+    aparecerCaixa();
 
     $(document).ready(function () {
         $('#telefone').mask('(99) 99999-9999');
@@ -125,7 +123,7 @@ window.onload = function () {
 
     document.getElementById("form").onsubmit = function () {
 
-        var valid = campoVazio();/* Valida se ambos o campos, cpf e cnpf, estão vazios*/
+        var valid = campoVazio();/* Valida se ambos o campos, cpf e cnpj, estão vazios*/
 
 
         var fisico = document.getElementById("idFisico");
@@ -430,7 +428,9 @@ function Onlychars(e) {
     if ((tecla >= "48") && (tecla <= "57")) {
         return false;
     }
+    
 }
+
 
 
 
